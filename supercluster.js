@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  Inject a button to wrap text into posts!
 // @author       Izzy
-// @match        https://supercluster.jcink.net/index.php?act=Post*
+// @match        https://supercluster.jcink.net/index.php*
 // @icon         https://www.google.com/s2/favicons?domain=jcink.net
 // @grant        none
 // ==/UserScript==
@@ -12,6 +12,14 @@
 (function () {
   'use strict';
 
+  if (document.getElementById("posting-form")) {
+    postTemplateButtons()
+  }
+
+
+})();
+
+function postTemplateButtons() {
   const container = $('#post-as .pformright');
 
   container.append(`<input type="button" class="forminput" name="iz-templateify" value="Template-ify!"> | <input type="button" class="forminput" name="iz-addpokemon" value="Add Pokemon!">`)
@@ -183,5 +191,4 @@
   $("[name=iz-templateify]").click(() => templateify())
 
   $("[name=iz-addpokemon]").click(() => addPokemon())
-
-})();
+}
