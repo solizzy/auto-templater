@@ -57,7 +57,7 @@ function postTemplateButtons() {
       let tags = new Set();
 
       postedBy.each(function () {
-        const text = $(this).text().toLowerCase();
+        const text = $(this).text();
         if (!text.match(new RegExp(`\\b${character}\\b`, "gi"))) {
           tags.add(`@[${text}]`);
         }
