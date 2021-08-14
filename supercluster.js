@@ -72,6 +72,8 @@ function postTemplateButtons() {
       .replace(/\*\*\*(.*?)\*\*\*/gi, `[b][i]$1[/i][/b]`) /* bold italics */
       .replace(/\*\*(.*?)\*\*/gi, `[b]$1[/b]`) /* bold */
       .replace(/\*(.*?)\*/gi, `[i]$1[/i]`) /* italics */
+      .replace(/\_(.*?)\_/gi, `[u]$1[/u]`) /* underline */
+      .replace(/(\d+d\d+([+-]\d+)?)/gi, `[roll]$1[/roll]`) /* dice roll */
       .trim()} \n\n <div class="ooc">\n <p>${tags}\n </div>\n\n </div> </main> </article>[/dohtml]`;
   }
 
